@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A06A4EE2BDE31F2008C8EDF /* NavigationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4ED2BDE31F2008C8EDF /* NavigationItemView.swift */; };
+		2A06A4F12BDE3556008C8EDF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F02BDE3556008C8EDF /* Extensions.swift */; };
+		2A06A4F42BDE3C3B008C8EDF /* QuickTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F32BDE3C3B008C8EDF /* QuickTextView.swift */; };
+		2A06A4F62BDE3CD5008C8EDF /* CuttingBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F52BDE3CD5008C8EDF /* CuttingBoardView.swift */; };
+		2A06A4F82BDE3CEE008C8EDF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F72BDE3CEE008C8EDF /* SettingView.swift */; };
+		2A06A4FA2BDE4075008C8EDF /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F92BDE4075008C8EDF /* Modifier.swift */; };
+		2A06A4FD2BDE4ED7008C8EDF /* QuickTextGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4FC2BDE4ED7008C8EDF /* QuickTextGroup.swift */; };
+		2A06A5012BDE54F4008C8EDF /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A5002BDE54F4008C8EDF /* LabelView.swift */; };
+		2A06A5032BDE5765008C8EDF /* CreateLabelGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A5022BDE5765008C8EDF /* CreateLabelGroupView.swift */; };
 		2A975E342BD9074D0043BD43 /* KeyboardToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */; };
 		2A975E362BD9074D0043BD43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E352BD9074D0043BD43 /* ContentView.swift */; };
 		2A975E382BD907500043BD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A975E372BD907500043BD43 /* Assets.xcassets */; };
@@ -41,6 +50,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A06A4ED2BDE31F2008C8EDF /* NavigationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemView.swift; sourceTree = "<group>"; };
+		2A06A4F02BDE3556008C8EDF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2A06A4F32BDE3C3B008C8EDF /* QuickTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextView.swift; sourceTree = "<group>"; };
+		2A06A4F52BDE3CD5008C8EDF /* CuttingBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuttingBoardView.swift; sourceTree = "<group>"; };
+		2A06A4F72BDE3CEE008C8EDF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		2A06A4F92BDE4075008C8EDF /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
+		2A06A4FC2BDE4ED7008C8EDF /* QuickTextGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextGroup.swift; sourceTree = "<group>"; };
+		2A06A5002BDE54F4008C8EDF /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		2A06A5022BDE5765008C8EDF /* CreateLabelGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLabelGroupView.swift; sourceTree = "<group>"; };
 		2A975E302BD9074D0043BD43 /* KeyboardTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolApp.swift; sourceTree = "<group>"; };
 		2A975E352BD9074D0043BD43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +90,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A06A4EC2BDE3187008C8EDF /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				2A06A4ED2BDE31F2008C8EDF /* NavigationItemView.swift */,
+				2A06A5002BDE54F4008C8EDF /* LabelView.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		2A06A4EF2BDE3545008C8EDF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				2A06A4F02BDE3556008C8EDF /* Extensions.swift */,
+				2A06A4F92BDE4075008C8EDF /* Modifier.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		2A06A4F22BDE3C0F008C8EDF /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				2A06A4F32BDE3C3B008C8EDF /* QuickTextView.swift */,
+				2A06A4F52BDE3CD5008C8EDF /* CuttingBoardView.swift */,
+				2A06A4F72BDE3CEE008C8EDF /* SettingView.swift */,
+				2A06A5022BDE5765008C8EDF /* CreateLabelGroupView.swift */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		2A06A4FB2BDE4E9A008C8EDF /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				2A06A4FC2BDE4ED7008C8EDF /* QuickTextGroup.swift */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
 		2A975E272BD9074D0043BD43 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +148,10 @@
 		2A975E322BD9074D0043BD43 /* KeyboardTool */ = {
 			isa = PBXGroup;
 			children = (
+				2A06A4FB2BDE4E9A008C8EDF /* Bean */,
+				2A06A4F22BDE3C0F008C8EDF /* Page */,
+				2A06A4EF2BDE3545008C8EDF /* Tools */,
+				2A06A4EC2BDE3187008C8EDF /* SubView */,
 				2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */,
 				2A975E352BD9074D0043BD43 /* ContentView.swift */,
 				2A975E372BD907500043BD43 /* Assets.xcassets */,
@@ -221,8 +280,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A06A4FA2BDE4075008C8EDF /* Modifier.swift in Sources */,
 				2A975E362BD9074D0043BD43 /* ContentView.swift in Sources */,
+				2A06A4F42BDE3C3B008C8EDF /* QuickTextView.swift in Sources */,
 				2A975E342BD9074D0043BD43 /* KeyboardToolApp.swift in Sources */,
+				2A06A4F82BDE3CEE008C8EDF /* SettingView.swift in Sources */,
+				2A06A4EE2BDE31F2008C8EDF /* NavigationItemView.swift in Sources */,
+				2A06A4F62BDE3CD5008C8EDF /* CuttingBoardView.swift in Sources */,
+				2A06A5032BDE5765008C8EDF /* CreateLabelGroupView.swift in Sources */,
+				2A06A4F12BDE3556008C8EDF /* Extensions.swift in Sources */,
+				2A06A4FD2BDE4ED7008C8EDF /* QuickTextGroup.swift in Sources */,
+				2A06A5012BDE54F4008C8EDF /* LabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
