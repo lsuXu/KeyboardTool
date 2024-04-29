@@ -14,10 +14,14 @@ struct RoundBgModify : ViewModifier {
     
     let bgColor : Color
     
+    let horizontal : CGFloat
+    
+    let vertical : CGFloat
+    
     func body(content: Content) -> some View {
         content
-            .padding(.horizontal , 18)
-            .padding(.vertical , 12)
+            .padding(.horizontal , horizontal)
+            .padding(.vertical , vertical)
             .background(RoundedRectangle(cornerRadius: radius).fill(bgColor))
     }
 }

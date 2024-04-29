@@ -38,7 +38,34 @@ extension Color {
             opacity: Double(a) / 255
         )
     }
+    
+    func toHexString() -> String {
+        let components = UIColor(self).cgColor.components
+        let r: CGFloat = components?[0] ?? 0.0
+        let g: CGFloat = components?[1] ?? 0.0
+        let b: CGFloat = components?[2] ?? 0.0
+ 
+        let hexString = String(format: "#%02lX%02lX%02lX", lroundf(Float(r * 255)), lroundf(Float(g * 255)), lroundf(Float(b * 255)))
+        return hexString
+    }
 }
+
+
+extension Dictionary {
+    
+    func toJsonString() -> String? {
+        guard let data = try? JSONSerialization.data(
+            withJSONObject: self,options: []) else {
+            return nil
+        }
+        guard let str = String(data: data, encoding: .utf8) else {
+            return nil
+        }
+        return str
+    }
+    
+}
+
 
 
 extension Font {
@@ -47,8 +74,8 @@ extension Font {
 
 
 extension View {
-    func roundBackground(radius : CGFloat = 8 , color : Color = .white) -> some View {
-        self.modifier(RoundBgModify(radius: radius, bgColor: color))
+    func roundBackground(radius : CGFloat = 8 , color : Color = .white , horizontal : CGFloat = 18, vertical : CGFloat = 12) -> some View {
+        self.modifier(RoundBgModify(radius: radius, bgColor: color,horizontal: horizontal , vertical: vertical))
     }
 }
 

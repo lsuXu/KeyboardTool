@@ -16,6 +16,10 @@
 		2A06A4FD2BDE4ED7008C8EDF /* QuickTextGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4FC2BDE4ED7008C8EDF /* QuickTextGroup.swift */; };
 		2A06A5012BDE54F4008C8EDF /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A5002BDE54F4008C8EDF /* LabelView.swift */; };
 		2A06A5032BDE5765008C8EDF /* CreateLabelGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A5022BDE5765008C8EDF /* CreateLabelGroupView.swift */; };
+		2A06A5052BDF6DF0008C8EDF /* QuickTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A5042BDF6DF0008C8EDF /* QuickTextViewModel.swift */; };
+		2A06A5072BDF6EFE008C8EDF /* QuickText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A5062BDF6EFE008C8EDF /* QuickText.swift */; };
+		2A06A50A2BDF73F1008C8EDF /* CounterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A5092BDF73F1008C8EDF /* CounterTool.swift */; };
+		2A06A50C2BDF7E64008C8EDF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A50B2BDF7E64008C8EDF /* Config.swift */; };
 		2A975E342BD9074D0043BD43 /* KeyboardToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */; };
 		2A975E362BD9074D0043BD43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E352BD9074D0043BD43 /* ContentView.swift */; };
 		2A975E382BD907500043BD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A975E372BD907500043BD43 /* Assets.xcassets */; };
@@ -59,6 +63,10 @@
 		2A06A4FC2BDE4ED7008C8EDF /* QuickTextGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextGroup.swift; sourceTree = "<group>"; };
 		2A06A5002BDE54F4008C8EDF /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		2A06A5022BDE5765008C8EDF /* CreateLabelGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLabelGroupView.swift; sourceTree = "<group>"; };
+		2A06A5042BDF6DF0008C8EDF /* QuickTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextViewModel.swift; sourceTree = "<group>"; };
+		2A06A5062BDF6EFE008C8EDF /* QuickText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickText.swift; sourceTree = "<group>"; };
+		2A06A5092BDF73F1008C8EDF /* CounterTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTool.swift; sourceTree = "<group>"; };
+		2A06A50B2BDF7E64008C8EDF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		2A975E302BD9074D0043BD43 /* KeyboardTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolApp.swift; sourceTree = "<group>"; };
 		2A975E352BD9074D0043BD43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +110,7 @@
 		2A06A4EF2BDE3545008C8EDF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2A06A5092BDF73F1008C8EDF /* CounterTool.swift */,
 				2A06A4F02BDE3556008C8EDF /* Extensions.swift */,
 				2A06A4F92BDE4075008C8EDF /* Modifier.swift */,
 			);
@@ -123,8 +132,17 @@
 			isa = PBXGroup;
 			children = (
 				2A06A4FC2BDE4ED7008C8EDF /* QuickTextGroup.swift */,
+				2A06A5062BDF6EFE008C8EDF /* QuickText.swift */,
 			);
 			path = Bean;
+			sourceTree = "<group>";
+		};
+		2A06A5082BDF73C0008C8EDF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2A06A5042BDF6DF0008C8EDF /* QuickTextViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2A975E272BD9074D0043BD43 = {
@@ -148,6 +166,7 @@
 		2A975E322BD9074D0043BD43 /* KeyboardTool */ = {
 			isa = PBXGroup;
 			children = (
+				2A06A5082BDF73C0008C8EDF /* ViewModel */,
 				2A06A4FB2BDE4E9A008C8EDF /* Bean */,
 				2A06A4F22BDE3C0F008C8EDF /* Page */,
 				2A06A4EF2BDE3545008C8EDF /* Tools */,
@@ -157,6 +176,7 @@
 				2A975E372BD907500043BD43 /* Assets.xcassets */,
 				2A975E392BD907500043BD43 /* KeyboardTool.entitlements */,
 				2A975E3A2BD907500043BD43 /* Preview Content */,
+				2A06A50B2BDF7E64008C8EDF /* Config.swift */,
 			);
 			path = KeyboardTool;
 			sourceTree = "<group>";
@@ -282,13 +302,17 @@
 			files = (
 				2A06A4FA2BDE4075008C8EDF /* Modifier.swift in Sources */,
 				2A975E362BD9074D0043BD43 /* ContentView.swift in Sources */,
+				2A06A50C2BDF7E64008C8EDF /* Config.swift in Sources */,
 				2A06A4F42BDE3C3B008C8EDF /* QuickTextView.swift in Sources */,
 				2A975E342BD9074D0043BD43 /* KeyboardToolApp.swift in Sources */,
 				2A06A4F82BDE3CEE008C8EDF /* SettingView.swift in Sources */,
 				2A06A4EE2BDE31F2008C8EDF /* NavigationItemView.swift in Sources */,
 				2A06A4F62BDE3CD5008C8EDF /* CuttingBoardView.swift in Sources */,
+				2A06A50A2BDF73F1008C8EDF /* CounterTool.swift in Sources */,
 				2A06A5032BDE5765008C8EDF /* CreateLabelGroupView.swift in Sources */,
+				2A06A5052BDF6DF0008C8EDF /* QuickTextViewModel.swift in Sources */,
 				2A06A4F12BDE3556008C8EDF /* Extensions.swift in Sources */,
+				2A06A5072BDF6EFE008C8EDF /* QuickText.swift in Sources */,
 				2A06A4FD2BDE4ED7008C8EDF /* QuickTextGroup.swift in Sources */,
 				2A06A5012BDE54F4008C8EDF /* LabelView.swift in Sources */,
 			);

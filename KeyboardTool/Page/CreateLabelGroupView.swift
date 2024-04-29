@@ -13,7 +13,7 @@ struct CreateLabelGroupView: View {
     
     @State var label : String = ""
     
-    @State var labColor : Color = .white
+    @State var labColor : Color = Color.red
     
     var body: some View {
         VStack{
@@ -34,16 +34,12 @@ struct CreateLabelGroupView: View {
             
             
             HStack{
-                ColorPicker("", selection: $labColor)
+                ColorPicker("", selection: $labColor ,supportsOpacity: false)
                 Spacer()
             }
             
-            LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 2), count: 6)) {
-                ForEach(0..<33 ){ item in
-                    Text("\(item)")
-                }
-            }
-            .roundBackground()
+            DefaultColorCheckView(labColor : $labColor)
+                .roundBackground(radius : 10 ,horizontal: 18 , vertical: 20)
             
             Spacer()
             
@@ -54,6 +50,44 @@ struct CreateLabelGroupView: View {
     }
 }
 
+private struct DefaultColorCheckView : View {
+   
+    @Binding var labColor : Color
+    
+    let defaultColors : [Color] = [Color.red , Color.orange,Color.green,Color.blue , Color.brown,Color.cyan,Color.purple,Color.gray,Color.pink , Color.yellow , Color.mint , Color.indigo]
+    
+    var body: some View {
+        LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 20), count: 6) , spacing: 20) {
+            ForEach(defaultColors , id: \.self ){ item in
+                ColorItem(labColor: $labColor, color: item)
+            }
+        }
+    }
+}
+
+private struct ColorItem : View {
+    
+    @Binding var labColor : Color
+    
+    let color : Color
+    
+    var body: some View {
+        Circle()
+            .fill(color)
+            .overlay {
+                if labColor.toHexString() == color.toHexString() {
+                    Circle()
+                        .stroke(.white, lineWidth: 3)
+                        .padding(5)
+                }
+            }
+            .onTapGesture {
+                withAnimation {
+                    self.labColor = color
+                }
+            }
+    }
+}
 
 private struct TitleView : View {
     

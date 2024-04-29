@@ -15,52 +15,63 @@ struct QuickTextView: View {
     
     var body: some View {
         NavigationStack {
-            VStack{
-                ScrollView {
-                    VStack{
+            
+            VStack(spacing : 0){
+                
+                List {
+                    
+                    Section{
                         HStack{
                             Text("全部")
                                 .font(.system(size: 14,weight: .bold))
                             Spacer()
                             Image(systemName: "chevron.right")
                         }
-                        .roundBackground()
-                        
-                        HStack{
-                            Text("自定义")
-                                .font(.system(size: 12))
-                                .foregroundStyle(.blue)
-                                .padding(.horizontal , 18)
-                                .padding(.top , 30)
-                            Spacer()
-                        }
-                        
-                        LazyVStack {
-                            ForEach(data , id: \.self){ item in
-                                VStack{
-                                    HStack(spacing : 20){
-                                        Circle()
-                                            .fill(.red)
-                                            .frame(width: 16,height: 16)
-                                            
-                                        Text("全部")
-                                            .font(.system(size: 14,weight: .bold))
-                                        Spacer()
-                                        Image(systemName: "chevron.right")
-                                    }
-                                    .padding(.vertical , 8)
-                                    Divider()
+                    }
+                    .listSectionSeparator(.hidden, edges: .all)
+                    .listRowBackground(Color.white)
+                    
+                    Section(header : HStack{
+                        Text("自定义")
+                        Spacer()
+                    }) {
+                        ForEach(data , id: \.self){ item in
+                            HStack(spacing : 20){
+                                Circle()
+                                    .fill(.red)
+                                    .frame(width: 16,height: 16)
+                                    
+                                Text("全部")
+                                    .font(.system(size: 14,weight: .bold))
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
+                            .swipeActions(edge : .trailing , allowsFullSwipe: true) {
+                                Button() {
+                                    print("删除")
+                                } label: {
+                                    Text("删除")
                                 }
+                                .tint(Color.red)
+                                
+                                Button() {
+                                    print("编辑")
+                                } label: {
+                                    Text("编辑")
+                                }
+                                .tint(Color.blue)
                             }
                         }
-                        .roundBackground()
-                        
                     }
-                    .padding(.horizontal , 20)
-                
+                    .listSectionSeparator(.hidden, edges: .top)
+                    .listRowBackground(Color.white)
+                    
                 }
+                .listStyle(.insetGrouped)
+                .background(.mainBg)
+                
             }
-            .background(.mainBg)
+            .scrollContentBackground(.hidden)
             .navigationTitle(Text("快捷文本"))
             .sheet(isPresented: $showAddGroup, onDismiss: {
                 print("隐藏了")
