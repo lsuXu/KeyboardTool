@@ -82,15 +82,15 @@ open class QuickTextViewModel : ObservableObject {
         if let index = allText.firstIndex(where: { item in
             item.id == labId
         }){
-            let currText = allText.remove(at: index)
-            insertQuickText(currText.modify(text: text))
+            let newQuickText = allText.remove(at: index).modify(text: text)
+            insertQuickText(newQuickText)
             
-            if var showGroup = groupTextMap[currText.groupId] , let childIndex = showGroup.firstIndex(where: { item in
-                item.id == currText.id
+            if var showGroup = groupTextMap[newQuickText.groupId] , let childIndex = showGroup.firstIndex(where: { item in
+                item.id == newQuickText.id
             }){
                 showGroup.remove(at: childIndex)
-                showGroup.insert(currText, at: 0)
-                groupTextMap[currText.groupId] = showGroup
+                showGroup.insert(newQuickText, at: 0)
+                groupTextMap[newQuickText.groupId] = showGroup
             }
         }
     }

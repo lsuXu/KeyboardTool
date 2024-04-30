@@ -33,6 +33,11 @@ struct QuickTextView: View {
                     ForEach(model.groupTextMap[group.id] ?? [] , id: \.id) { item in
                         Text(item.text)
                             .font(.mainTextFont)
+                            .onTapGesture {
+                                withAnimation {
+                                    self.editedQuickText = item
+                                }
+                            }
                             .swipeActions(edge : .trailing , allowsFullSwipe: true) {
                                 Button() {
                                     model.removeQuickText(item)
