@@ -70,6 +70,12 @@ extension Dictionary {
 
 extension Font {
     static let keyboardText : Font = .system(size: 14,weight: .bold)
+    //主要的文本字体
+    static let mainTextFont : Font = .system(size: 13,weight: .bold)
+    
+    static let mainGroupFont : Font = .system(size: 14,weight: .bold)
+
+    static let subLabelFont : Font = .system(size: 13,weight: .light)
 }
 
 
@@ -87,4 +93,27 @@ extension UINavigationController {
         super.viewWillLayoutSubviews()
     }
     
+}
+
+
+extension Array: RawRepresentable where Element: Codable {
+    public init?(rawValue: String) {
+        guard let data = rawValue.data(using: .utf8),
+              let result = try? JSONDecoder().decode([Element].self, from: data)
+        else {
+            return nil
+        }
+        print("解码 result = \(result)")
+        self = result
+    }
+
+    public var rawValue: String {
+        guard let data = try? JSONEncoder().encode(self),
+              let result = String(data: data, encoding: .utf8)
+        else {
+            return "[]"
+        }
+        print("解码 rawValue result = \(result)")
+        return result
+    }
 }

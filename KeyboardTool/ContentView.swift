@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 0) {
             TabView{
-                QuickTextView()
+                QuickTextGroupView()
                     .tabItem({
                         NavigationItemView(title: "快捷文本", icon: "list.triangle")
                     })

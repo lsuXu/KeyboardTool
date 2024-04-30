@@ -2,98 +2,79 @@
 //  QuickTextView.swift
 //  KeyboardTool
 //
-//  Created by jz on 2024/4/28.
+//  Created by jz on 2024/4/29.
 //
 
 import SwiftUI
 
 struct QuickTextView: View {
     
-    let data : [Int] = [1,2,3,4,5,6,7]
+    @EnvironmentObject var model : QuickTextViewModel
     
-    @State var showAddGroup : Bool = false
+    @State var showAddDialog : Bool = false
+    
+    let group : QuickTextGroup
+    
+    @State var editedQuickText : QuickText? = nil
     
     var body: some View {
-        NavigationStack {
-            
-            VStack(spacing : 0){
-                
-                List {
-                    
-                    Section{
-                        HStack{
-                            Text("全部")
-                                .font(.system(size: 14,weight: .bold))
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                        }
+        Group{
+            if model.groupTextMap[group.id]?.isEmpty ?? true {
+                Button {
+                    withAnimation {
+                        showAddDialog.toggle()
                     }
-                    .listSectionSeparator(.hidden, edges: .all)
-                    .listRowBackground(Color.white)
-                    
-                    Section(header : HStack{
-                        Text("自定义")
-                        Spacer()
-                    }) {
-                        ForEach(data , id: \.self){ item in
-                            HStack(spacing : 20){
-                                Circle()
-                                    .fill(.red)
-                                    .frame(width: 16,height: 16)
-                                    
-                                Text("全部")
-                                    .font(.system(size: 14,weight: .bold))
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                            }
+                } label: {
+                    Text("点击添加快捷文本")
+                }
+
+            } else {
+                List {
+                    ForEach(model.groupTextMap[group.id] ?? [] , id: \.id) { item in
+                        Text(item.text)
+                            .font(.mainTextFont)
                             .swipeActions(edge : .trailing , allowsFullSwipe: true) {
                                 Button() {
-                                    print("删除")
+                                    model.removeQuickText(item)
                                 } label: {
                                     Text("删除")
                                 }
                                 .tint(Color.red)
                                 
                                 Button() {
-                                    print("编辑")
+                                    withAnimation {
+                                        self.editedQuickText = item
+                                    }
                                 } label: {
                                     Text("编辑")
                                 }
                                 .tint(Color.blue)
                             }
-                        }
                     }
-                    .listSectionSeparator(.hidden, edges: .top)
-                    .listRowBackground(Color.white)
-                    
-                }
-                .listStyle(.insetGrouped)
-                .background(.mainBg)
-                
-            }
-            .scrollContentBackground(.hidden)
-            .navigationTitle(Text("快捷文本"))
-            .sheet(isPresented: $showAddGroup, onDismiss: {
-                print("隐藏了")
-            }, content: {
-                CreateLabelGroupView(show: $showAddGroup)
-            })
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        withAnimation {
-                            showAddGroup.toggle()
-                        }
-                    } label: {
-                        Image(systemName: "folder.badge.plus")
-                    }
-
                 }
             }
         }
-    }
-}
+        .sheet(isPresented: $showAddDialog, content: {
+            CreateQuickTextView(show: $showAddDialog, group: group)
+        })
+        .sheet(item: $editedQuickText, content: { quickText in
+            EditQuickTextView(group: group, quickText: quickText){
+                self.editedQuickText = nil
+            }
+        })
+        .navigationTitle(Text(group.label))
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    withAnimation {
+                        showAddDialog.toggle()
+                    }
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                }
 
-#Preview {
-    QuickTextView()
+            }
+        }
+    }
 }
