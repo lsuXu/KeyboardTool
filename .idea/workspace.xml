@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e332e69-c6d3-4453-ab8e-89d6799c6798" name="Changes" comment="快捷文本分组创建，编辑，添加快捷文本以及预览查看等功能" />
+    <list default="true" id="3e332e69-c6d3-4453-ab8e-89d6799c6798" name="Changes" comment="修复快捷文本已知问题" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +81,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714479315526</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="修复快捷文本已知问题">
+      <option name="closed" value="true" />
+      <created>1714479930704</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714479930704</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +108,7 @@
     <MESSAGE value="构建主程序界面" />
     <MESSAGE value="页面样式调整，增加基础数据类" />
     <MESSAGE value="快捷文本分组创建，编辑，添加快捷文本以及预览查看等功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="快捷文本分组创建，编辑，添加快捷文本以及预览查看等功能" />
+    <MESSAGE value="修复快捷文本已知问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复快捷文本已知问题" />
   </component>
 </project>

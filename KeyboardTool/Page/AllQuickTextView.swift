@@ -41,6 +41,23 @@ struct AllQuickTextView: View {
                                 }
                             }
                         }
+                        .swipeActions(edge : .trailing , allowsFullSwipe: true) {
+                            Button() {
+                                model.removeQuickText(quickText)
+                            } label: {
+                                Text("删除")
+                            }
+                            .tint(Color.red)
+                            
+                            Button() {
+                                withAnimation {
+                                    self.editQuickText = quickText
+                                }
+                            } label: {
+                                Text("编辑")
+                            }
+                            .tint(Color.blue)
+                        }
 
                     }
                 }

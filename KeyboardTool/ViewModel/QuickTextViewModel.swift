@@ -120,7 +120,6 @@ open class QuickTextViewModel : ObservableObject {
     func saveGroups(_ groups: [QuickTextGroup]) {
         do {
             let encodedData = try JSONEncoder().encode(groups)
-            print("保存群组数据：\(groups.count)")
             getShared()?.set(encodedData, forKey: groupCacheKey)
         } catch {
             print("保存失败群组，Error encoding QuickTextGroups to JSON: \(error)")
@@ -132,7 +131,6 @@ open class QuickTextViewModel : ObservableObject {
         if let encodedData = getShared()?.data(forKey: groupCacheKey) {
             do {
                 let str = String(data: encodedData, encoding: .utf8)
-                print("loadQuickTextGroups解码数据：\(str)")
                 let decodedGroups = try JSONDecoder().decode([QuickTextGroup].self, from: encodedData)
                 return decodedGroups
             } catch {
@@ -145,7 +143,6 @@ open class QuickTextViewModel : ObservableObject {
     // 存储 QuickTextGroup 数组
     func saveQuickText(_ texts: [QuickText]) {
         do {
-            print("保存文本数据：\(texts.count)")
             let encodedData = try JSONEncoder().encode(texts)
             getShared()?.set(encodedData, forKey: quickTextCacheKey)
         } catch {
@@ -157,7 +154,6 @@ open class QuickTextViewModel : ObservableObject {
     func loadQuickText() -> [QuickText] {
         if let encodedData = getShared()?.data(forKey: quickTextCacheKey) {
             let str = String(data: encodedData, encoding: .utf8)
-            print("loadQuickText解码数据：\(str)")
             do {
                 let decodedGroups = try JSONDecoder().decode([QuickText].self, from: encodedData)
                 return decodedGroups

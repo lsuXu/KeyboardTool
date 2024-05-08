@@ -42,5 +42,16 @@ extension Color {
 
 
 extension Font {
-    static let keyboardText : Font = .system(size: 14,weight: .bold)
+    //标题
+    static let keyboardText : Font = .system(size: 13,weight: .bold)
+    
+    static let normalText : Font = .system(size: 14 , weight: .bold)
+}
+
+extension View {
+    func roundBackground(radius : CGFloat = 4 , color : Color = .white , horizontal : CGFloat = 6, vertical : CGFloat = 8) -> some View {
+        padding(.horizontal , horizontal)
+        .padding(.vertical , vertical)
+        .background(RoundedRectangle(cornerRadius: radius).fill(color))
+    }
 }

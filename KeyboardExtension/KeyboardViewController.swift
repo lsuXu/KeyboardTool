@@ -41,24 +41,21 @@ class KeyboardViewController: UIInputViewController {
         
         let hostView = UIHostingController(rootView: CustomerInputView(proxy: self.textDocumentProxy){
             self.openMainApp()
+        } onTextClick: { text in
+            self.onTextClick(text)
         }).view
         hostView?.translatesAutoresizingMaskIntoConstraints = false
         
-        let delBtn = UIButton(type: .infoDark)
-        delBtn.translatesAutoresizingMaskIntoConstraints = false
         
         if let hostView = hostView ,let inputView = self.inputView{
             inputView.addSubview(hostView)
-            inputView.addSubview(delBtn)
             
             // 设置图片视图的约束
             NSLayoutConstraint.activate([
                 hostView.topAnchor.constraint(equalTo: inputView.topAnchor),
                 hostView.leadingAnchor.constraint(equalTo: inputView.leadingAnchor),
                 hostView.trailingAnchor.constraint(equalTo: inputView.trailingAnchor),
-                hostView.bottomAnchor.constraint(equalTo: inputView.bottomAnchor),
-                delBtn.bottomAnchor.constraint(equalTo: inputView.bottomAnchor),
-                delBtn.leftAnchor.constraint(equalTo: inputView.leftAnchor)
+                hostView.bottomAnchor.constraint(equalTo: inputView.bottomAnchor)
             ])
         }
         
@@ -109,6 +106,10 @@ class KeyboardViewController: UIInputViewController {
         
         return false
     }
+    
+    func onTextClick(_ text : String) {
+        self.textDocumentProxy.insertText(text)
+    }
 }
 
 class MyInputView : UIInputView {
@@ -118,14 +119,18 @@ class MyInputView : UIInputView {
 
 struct CustomerInputView : View {
     
+    let quickModel : QuickTextViewModel = QuickTextViewModel()
+    
     @State var selctedTab : Int = 1
     
     let proxy : UITextDocumentProxy
     
     let launchApp : ()-> Void
     
+    let onTextClick : (_ text : String) -> Void
+    
     var body: some View {
-        VStack{
+        VStack(spacing : 5){
             HStack{
                 HStack(){
                     MenuItem(tag: 1, text: "快捷文本", checkedTag: $selctedTab)
@@ -135,95 +140,126 @@ struct CustomerInputView : View {
                 .padding(3)
                 .background(RoundedRectangle(cornerRadius: 5).fill(Color.menuBgColor))
                 
-                Image(systemName: "seal")
+                Image(systemName: "gear")
                     .imageScale(.small)
                     .padding(.horizontal , 15)
                     .onTapGesture {
                         launchApp()
                     }
             }
+            .padding(.bottom , 10)
             
             GeometryReader(content: { geometry in
                 TabView(selection: $selctedTab,
                         content:  {
-                    ScrollView {
-                        VStack{
-                            
-                            Text("Tab1")
-                            Text("Tab1")
-                            Text("Tab1")
-                            Text("Tab1")
-                        }
-                    }
-                    .tag(1)
-                    ScrollView {
-                        VStack{
-                            Text("给大家啊多久啊")
-                            Text("给大家啊多久啊")
-                            Text("给大家啊多久啊")
-                            Text("给大家啊多久啊")
-                                .onTapGesture {
-                                    proxy.setMarkedText("你好啊", selectedRange: NSRange.init(location: 0, length: 0))
-                                }
-                        }
-                    }
-                    .tag(2)
-                    ScrollView {
-                        VStack{
-                            Text("Tab333")
-                            Text("给大家啊多久啊Tab333")
-                            Text("给大家啊多久啊Tab333")
-                            Text("给大家啊多久啊Tab333")
-                                .onTapGesture {
-                                    proxy.setMarkedText("你好啊", selectedRange: NSRange.init(location: 0, length: 0))
-                                }
-                        }
-                    }
-                    .tag(3)
+                    QuickTextPage(onTextClick: self.onTextClick)
+                        .environmentObject(quickModel)
+                        .tag(1)
+                    QuickTextPage(onTextClick: self.onTextClick)
+                        .environmentObject(quickModel)
+                        .tag(2)
+                    QuickTextPage(onTextClick: self.onTextClick)
+                        .environmentObject(quickModel)
+                        .tag(3)
                 })
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                .background(.clear)
                 .frame(width: geometry.size.width , height: geometry.size.height)
             })
-            HStack{
-                
-                Spacer()
-                BtnItem(text: "add"){
-                    //插入一个字符
-                    proxy.insertText("我")
+            HStack(spacing : 8){
+                BtnItem {
+                    Text("清空输入")
+                        .font(.normalText)
+                        .foregroundStyle(.black)
+                } action: {
+                    clearText()
                 }
-                BtnItem(text: "删除"){
+                
+                BtnItem {
+                    Image(systemName: "delete.backward")
+                        .imageScale(.small)
+                        .foregroundStyle(.black)
+                } action: {
                     //删除一个字符
                     proxy.deleteBackward()
                 }
-                Spacer()
-            }
 
+                BtnItem {
+                    HStack{
+                        Spacer()
+                        Text("空格")
+                            .font(.normalText)
+                            .foregroundStyle(.black)
+                        Spacer()
+                    }
+                } action: {
+                    //删除一个字符
+                    insertSpace()
+                }
+
+                BtnItem(bgColor : .blue) {
+                    Image(systemName: "return.left")
+                        .imageScale(.small)
+                        .foregroundStyle(.white)
+                        
+                } action: {
+                    //删除一个字符
+                    insertNewline()
+                }
+            }
+            
         }
         .padding(10)
         .frame(width: UIScreen.main.bounds.width,height: 300)
         .background(Color.bgColor)
     }
     
+    func clearText() {
+        // 循环删除文本直到输入文本为空
+        while proxy.hasText {
+            proxy.deleteBackward()
+        }
+    }
+    
+    //输入空格
+    func insertSpace() {
+        proxy.insertText(" ")
+    }
+
+    //输入换行符
+    func insertNewline() {
+        proxy.insertText("\n")
+    }
+    
 }
 
-struct BtnItem : View {
+
+struct BtnItem<Label> : View where Label : View {
     
-    let text : String
+    let bgColor : Color
+            
+    let child : () -> Label
     
     let action : () -> Void
+    
+    init(bgColor: Color = .mainColor, child: @escaping () -> Label, action: @escaping () -> Void) {
+        self.bgColor = bgColor
+        self.child = child
+        self.action = action
+    }
     
     var body: some View {
         HStack{
             Button {
                 action()
             } label: {
-                Text(text)
-                    .font(.system(size: 14,weight: .bold))
+                child()
             }
 
         }
         .padding(.horizontal , 20)
         .padding(.vertical , 10)
-        .background(RoundedRectangle(cornerRadius: 5).fill(Color.mainColor))
+        .background(RoundedRectangle(cornerRadius: 5).fill(bgColor))
     }
 }
 

@@ -27,6 +27,11 @@
 		2A06A5172BE0CAC7008C8EDF /* EditQuickGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A5162BE0CAC7008C8EDF /* EditQuickGroupView.swift */; };
 		2A06A5192BE0CB24008C8EDF /* DefaultColorCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A5182BE0CB24008C8EDF /* DefaultColorCheckView.swift */; };
 		2A06A51B2BE0CFED008C8EDF /* AllQuickTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A51A2BE0CFED008C8EDF /* AllQuickTextView.swift */; };
+		2A32B2732BE9D87000081DF6 /* QuickTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2722BE9D87000081DF6 /* QuickTextViewModel.swift */; };
+		2A32B2762BE9D8C300081DF6 /* QuickText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2752BE9D8C300081DF6 /* QuickText.swift */; };
+		2A32B2782BE9D8F400081DF6 /* QuickTextGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2772BE9D8F400081DF6 /* QuickTextGroup.swift */; };
+		2A32B27A2BE9DA2B00081DF6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2792BE9DA2B00081DF6 /* Config.swift */; };
+		2A32B27F2BEA0D5300081DF6 /* QuickTextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B27E2BEA0D5300081DF6 /* QuickTextPage.swift */; };
 		2A975E342BD9074D0043BD43 /* KeyboardToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */; };
 		2A975E362BD9074D0043BD43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E352BD9074D0043BD43 /* ContentView.swift */; };
 		2A975E382BD907500043BD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A975E372BD907500043BD43 /* Assets.xcassets */; };
@@ -34,6 +39,8 @@
 		2A975E492BD908FB0043BD43 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E482BD908FB0043BD43 /* KeyboardViewController.swift */; };
 		2A975E4D2BD908FB0043BD43 /* KeyboardExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2A975E462BD908FB0043BD43 /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2AA90A072BDB5C0F00EB52C2 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA90A062BDB5C0F00EB52C2 /* Extension.swift */; };
+		2ADB80FD2BE11B0B00AA8C9B /* ClipBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB80FC2BE11B0B00AA8C9B /* ClipBoardViewModel.swift */; };
+		2ADB80FF2BE11BA300AA8C9B /* ClipboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB80FE2BE11BA300AA8C9B /* ClipboardInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +88,11 @@
 		2A06A5162BE0CAC7008C8EDF /* EditQuickGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuickGroupView.swift; sourceTree = "<group>"; };
 		2A06A5182BE0CB24008C8EDF /* DefaultColorCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultColorCheckView.swift; sourceTree = "<group>"; };
 		2A06A51A2BE0CFED008C8EDF /* AllQuickTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuickTextView.swift; sourceTree = "<group>"; };
+		2A32B2722BE9D87000081DF6 /* QuickTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextViewModel.swift; sourceTree = "<group>"; };
+		2A32B2752BE9D8C300081DF6 /* QuickText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickText.swift; sourceTree = "<group>"; };
+		2A32B2772BE9D8F400081DF6 /* QuickTextGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextGroup.swift; sourceTree = "<group>"; };
+		2A32B2792BE9DA2B00081DF6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		2A32B27E2BEA0D5300081DF6 /* QuickTextPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextPage.swift; sourceTree = "<group>"; };
 		2A975E302BD9074D0043BD43 /* KeyboardTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolApp.swift; sourceTree = "<group>"; };
 		2A975E352BD9074D0043BD43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +104,8 @@
 		2A975E4A2BD908FB0043BD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AA90A062BDB5C0F00EB52C2 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2AA90A082BDB7F4900EB52C2 /* KeyboardExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardExtension.entitlements; sourceTree = "<group>"; };
+		2ADB80FC2BE11B0B00AA8C9B /* ClipBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipBoardViewModel.swift; sourceTree = "<group>"; };
+		2ADB80FE2BE11BA300AA8C9B /* ClipboardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +165,7 @@
 			children = (
 				2A06A4FC2BDE4ED7008C8EDF /* QuickTextGroup.swift */,
 				2A06A5062BDF6EFE008C8EDF /* QuickText.swift */,
+				2ADB80FE2BE11BA300AA8C9B /* ClipboardInfo.swift */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
@@ -159,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				2A06A5042BDF6DF0008C8EDF /* QuickTextViewModel.swift */,
+				2ADB80FC2BE11B0B00AA8C9B /* ClipBoardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -172,6 +188,31 @@
 				2A06A5162BE0CAC7008C8EDF /* EditQuickGroupView.swift */,
 			);
 			path = Dialog;
+			sourceTree = "<group>";
+		};
+		2A32B2712BE9D84F00081DF6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2A32B2722BE9D87000081DF6 /* QuickTextViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2A32B2742BE9D8A800081DF6 /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				2A32B2752BE9D8C300081DF6 /* QuickText.swift */,
+				2A32B2772BE9D8F400081DF6 /* QuickTextGroup.swift */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
+		2A32B27D2BEA0D0000081DF6 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				2A32B27E2BEA0D5300081DF6 /* QuickTextPage.swift */,
+			);
+			path = Page;
 			sourceTree = "<group>";
 		};
 		2A975E272BD9074D0043BD43 = {
@@ -221,10 +262,14 @@
 		2A975E472BD908FB0043BD43 /* KeyboardExtension */ = {
 			isa = PBXGroup;
 			children = (
+				2A32B27D2BEA0D0000081DF6 /* Page */,
+				2A32B2742BE9D8A800081DF6 /* Bean */,
+				2A32B2712BE9D84F00081DF6 /* ViewModel */,
 				2AA90A082BDB7F4900EB52C2 /* KeyboardExtension.entitlements */,
 				2A975E482BD908FB0043BD43 /* KeyboardViewController.swift */,
 				2A975E4A2BD908FB0043BD43 /* Info.plist */,
 				2AA90A062BDB5C0F00EB52C2 /* Extension.swift */,
+				2A32B2792BE9DA2B00081DF6 /* Config.swift */,
 			);
 			path = KeyboardExtension;
 			sourceTree = "<group>";
@@ -331,6 +376,7 @@
 			files = (
 				2A06A4FA2BDE4075008C8EDF /* Modifier.swift in Sources */,
 				2A975E362BD9074D0043BD43 /* ContentView.swift in Sources */,
+				2ADB80FF2BE11BA300AA8C9B /* ClipboardInfo.swift in Sources */,
 				2A06A50C2BDF7E64008C8EDF /* Config.swift in Sources */,
 				2A06A4F42BDE3C3B008C8EDF /* QuickTextGroupView.swift in Sources */,
 				2A975E342BD9074D0043BD43 /* KeyboardToolApp.swift in Sources */,
@@ -342,6 +388,7 @@
 				2A06A50A2BDF73F1008C8EDF /* CounterTool.swift in Sources */,
 				2A06A5032BDE5765008C8EDF /* CreateLabelGroupView.swift in Sources */,
 				2A06A5052BDF6DF0008C8EDF /* QuickTextViewModel.swift in Sources */,
+				2ADB80FD2BE11B0B00AA8C9B /* ClipBoardViewModel.swift in Sources */,
 				2A06A50E2BDFAA47008C8EDF /* QuickTextView.swift in Sources */,
 				2A06A5172BE0CAC7008C8EDF /* EditQuickGroupView.swift in Sources */,
 				2A06A5192BE0CB24008C8EDF /* DefaultColorCheckView.swift in Sources */,
@@ -358,8 +405,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A32B2782BE9D8F400081DF6 /* QuickTextGroup.swift in Sources */,
+				2A32B2762BE9D8C300081DF6 /* QuickText.swift in Sources */,
+				2A32B2732BE9D87000081DF6 /* QuickTextViewModel.swift in Sources */,
 				2A975E492BD908FB0043BD43 /* KeyboardViewController.swift in Sources */,
 				2AA90A072BDB5C0F00EB52C2 /* Extension.swift in Sources */,
+				2A32B27F2BEA0D5300081DF6 /* QuickTextPage.swift in Sources */,
+				2A32B27A2BE9DA2B00081DF6 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
