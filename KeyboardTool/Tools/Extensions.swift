@@ -76,12 +76,32 @@ extension Font {
     static let mainGroupFont : Font = .system(size: 14,weight: .bold)
 
     static let subLabelFont : Font = .system(size: 13,weight: .light)
+    
+    static let clipTextFont : Font = .system(size: 15 , weight: .bold)
 }
 
 
 extension View {
     func roundBackground(radius : CGFloat = 8 , color : Color = .white , horizontal : CGFloat = 18, vertical : CGFloat = 12) -> some View {
         self.modifier(RoundBgModify(radius: radius, bgColor: color,horizontal: horizontal , vertical: vertical))
+    }
+}
+
+extension Int {
+    func formatTime() -> String {
+        // 将毫秒数转换为秒数
+        let seconds = self
+
+        // 创建一个 Date 对象
+        let date = Date(timeIntervalSince1970: TimeInterval(seconds))
+
+        // 创建一个 DateFormatter 对象，并设置所需的日期时间格式
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // 例如：2021-09-15 12:00:00
+
+        // 使用 formatter 将 Date 对象转换为字符串
+        let formattedDate = formatter.string(from: date)
+        return formattedDate
     }
 }
 

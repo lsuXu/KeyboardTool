@@ -10,7 +10,7 @@
 		2A06A4EE2BDE31F2008C8EDF /* NavigationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4ED2BDE31F2008C8EDF /* NavigationItemView.swift */; };
 		2A06A4F12BDE3556008C8EDF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F02BDE3556008C8EDF /* Extensions.swift */; };
 		2A06A4F42BDE3C3B008C8EDF /* QuickTextGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F32BDE3C3B008C8EDF /* QuickTextGroupView.swift */; };
-		2A06A4F62BDE3CD5008C8EDF /* CuttingBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F52BDE3CD5008C8EDF /* CuttingBoardView.swift */; };
+		2A06A4F62BDE3CD5008C8EDF /* ClipboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F52BDE3CD5008C8EDF /* ClipboardView.swift */; };
 		2A06A4F82BDE3CEE008C8EDF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F72BDE3CEE008C8EDF /* SettingView.swift */; };
 		2A06A4FA2BDE4075008C8EDF /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4F92BDE4075008C8EDF /* Modifier.swift */; };
 		2A06A4FD2BDE4ED7008C8EDF /* QuickTextGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A06A4FC2BDE4ED7008C8EDF /* QuickTextGroup.swift */; };
@@ -32,6 +32,11 @@
 		2A32B2782BE9D8F400081DF6 /* QuickTextGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2772BE9D8F400081DF6 /* QuickTextGroup.swift */; };
 		2A32B27A2BE9DA2B00081DF6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2792BE9DA2B00081DF6 /* Config.swift */; };
 		2A32B27F2BEA0D5300081DF6 /* QuickTextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B27E2BEA0D5300081DF6 /* QuickTextPage.swift */; };
+		2A32B2812BEB2C3A00081DF6 /* AppSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2802BEB2C3A00081DF6 /* AppSceneDelegate.swift */; };
+		2A32B2832BEB2CF200081DF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2822BEB2CF200081DF6 /* AppDelegate.swift */; };
+		2A32B2852BEB72B500081DF6 /* ClipBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2842BEB72B500081DF6 /* ClipBoardViewModel.swift */; };
+		2A32B2872BEB72CF00081DF6 /* ClipboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2862BEB72CF00081DF6 /* ClipboardInfo.swift */; };
+		2A32B2892BEB734000081DF6 /* ClipTextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2882BEB734000081DF6 /* ClipTextPage.swift */; };
 		2A975E342BD9074D0043BD43 /* KeyboardToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */; };
 		2A975E362BD9074D0043BD43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E352BD9074D0043BD43 /* ContentView.swift */; };
 		2A975E382BD907500043BD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A975E372BD907500043BD43 /* Assets.xcassets */; };
@@ -71,7 +76,7 @@
 		2A06A4ED2BDE31F2008C8EDF /* NavigationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemView.swift; sourceTree = "<group>"; };
 		2A06A4F02BDE3556008C8EDF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2A06A4F32BDE3C3B008C8EDF /* QuickTextGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextGroupView.swift; sourceTree = "<group>"; };
-		2A06A4F52BDE3CD5008C8EDF /* CuttingBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuttingBoardView.swift; sourceTree = "<group>"; };
+		2A06A4F52BDE3CD5008C8EDF /* ClipboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardView.swift; sourceTree = "<group>"; };
 		2A06A4F72BDE3CEE008C8EDF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		2A06A4F92BDE4075008C8EDF /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 		2A06A4FC2BDE4ED7008C8EDF /* QuickTextGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextGroup.swift; sourceTree = "<group>"; };
@@ -93,6 +98,12 @@
 		2A32B2772BE9D8F400081DF6 /* QuickTextGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextGroup.swift; sourceTree = "<group>"; };
 		2A32B2792BE9DA2B00081DF6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		2A32B27E2BEA0D5300081DF6 /* QuickTextPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTextPage.swift; sourceTree = "<group>"; };
+		2A32B2802BEB2C3A00081DF6 /* AppSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSceneDelegate.swift; sourceTree = "<group>"; };
+		2A32B2822BEB2CF200081DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A32B2842BEB72B500081DF6 /* ClipBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipBoardViewModel.swift; sourceTree = "<group>"; };
+		2A32B2862BEB72CF00081DF6 /* ClipboardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardInfo.swift; sourceTree = "<group>"; };
+		2A32B2882BEB734000081DF6 /* ClipTextPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipTextPage.swift; sourceTree = "<group>"; };
+		2A32B28A2BEB771300081DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2A975E302BD9074D0043BD43 /* KeyboardTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolApp.swift; sourceTree = "<group>"; };
 		2A975E352BD9074D0043BD43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -152,7 +163,7 @@
 			children = (
 				2A06A5152BE0C714008C8EDF /* Dialog */,
 				2A06A4F32BDE3C3B008C8EDF /* QuickTextGroupView.swift */,
-				2A06A4F52BDE3CD5008C8EDF /* CuttingBoardView.swift */,
+				2A06A4F52BDE3CD5008C8EDF /* ClipboardView.swift */,
 				2A06A4F72BDE3CEE008C8EDF /* SettingView.swift */,
 				2A06A50D2BDFAA47008C8EDF /* QuickTextView.swift */,
 				2A06A51A2BE0CFED008C8EDF /* AllQuickTextView.swift */,
@@ -194,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				2A32B2722BE9D87000081DF6 /* QuickTextViewModel.swift */,
+				2A32B2842BEB72B500081DF6 /* ClipBoardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -203,6 +215,7 @@
 			children = (
 				2A32B2752BE9D8C300081DF6 /* QuickText.swift */,
 				2A32B2772BE9D8F400081DF6 /* QuickTextGroup.swift */,
+				2A32B2862BEB72CF00081DF6 /* ClipboardInfo.swift */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
@@ -211,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				2A32B27E2BEA0D5300081DF6 /* QuickTextPage.swift */,
+				2A32B2882BEB734000081DF6 /* ClipTextPage.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -236,6 +250,7 @@
 		2A975E322BD9074D0043BD43 /* KeyboardTool */ = {
 			isa = PBXGroup;
 			children = (
+				2A32B28A2BEB771300081DF6 /* Info.plist */,
 				2A06A5082BDF73C0008C8EDF /* ViewModel */,
 				2A06A4FB2BDE4E9A008C8EDF /* Bean */,
 				2A06A4F22BDE3C0F008C8EDF /* Page */,
@@ -247,6 +262,8 @@
 				2A975E392BD907500043BD43 /* KeyboardTool.entitlements */,
 				2A975E3A2BD907500043BD43 /* Preview Content */,
 				2A06A50B2BDF7E64008C8EDF /* Config.swift */,
+				2A32B2802BEB2C3A00081DF6 /* AppSceneDelegate.swift */,
+				2A32B2822BEB2CF200081DF6 /* AppDelegate.swift */,
 			);
 			path = KeyboardTool;
 			sourceTree = "<group>";
@@ -379,12 +396,14 @@
 				2ADB80FF2BE11BA300AA8C9B /* ClipboardInfo.swift in Sources */,
 				2A06A50C2BDF7E64008C8EDF /* Config.swift in Sources */,
 				2A06A4F42BDE3C3B008C8EDF /* QuickTextGroupView.swift in Sources */,
+				2A32B2812BEB2C3A00081DF6 /* AppSceneDelegate.swift in Sources */,
 				2A975E342BD9074D0043BD43 /* KeyboardToolApp.swift in Sources */,
 				2A06A5122BE0AC97008C8EDF /* TitleView.swift in Sources */,
+				2A32B2832BEB2CF200081DF6 /* AppDelegate.swift in Sources */,
 				2A06A4F82BDE3CEE008C8EDF /* SettingView.swift in Sources */,
 				2A06A5142BE0C6F1008C8EDF /* EditQuickTextView.swift in Sources */,
 				2A06A4EE2BDE31F2008C8EDF /* NavigationItemView.swift in Sources */,
-				2A06A4F62BDE3CD5008C8EDF /* CuttingBoardView.swift in Sources */,
+				2A06A4F62BDE3CD5008C8EDF /* ClipboardView.swift in Sources */,
 				2A06A50A2BDF73F1008C8EDF /* CounterTool.swift in Sources */,
 				2A06A5032BDE5765008C8EDF /* CreateLabelGroupView.swift in Sources */,
 				2A06A5052BDF6DF0008C8EDF /* QuickTextViewModel.swift in Sources */,
@@ -412,6 +431,9 @@
 				2AA90A072BDB5C0F00EB52C2 /* Extension.swift in Sources */,
 				2A32B27F2BEA0D5300081DF6 /* QuickTextPage.swift in Sources */,
 				2A32B27A2BE9DA2B00081DF6 /* Config.swift in Sources */,
+				2A32B2852BEB72B500081DF6 /* ClipBoardViewModel.swift in Sources */,
+				2A32B2872BEB72CF00081DF6 /* ClipboardInfo.swift in Sources */,
+				2A32B2892BEB734000081DF6 /* ClipTextPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +576,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KeyboardTool/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "DIY键盘";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -593,6 +617,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KeyboardTool/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "DIY键盘";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -627,7 +653,7 @@
 				DEVELOPMENT_TEAM = TTMA3UNJ79;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = KeyboardExtension;
+				INFOPLIST_KEY_CFBundleDisplayName = "DIY键盘";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -658,7 +684,7 @@
 				DEVELOPMENT_TEAM = TTMA3UNJ79;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = KeyboardExtension;
+				INFOPLIST_KEY_CFBundleDisplayName = "DIY键盘";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

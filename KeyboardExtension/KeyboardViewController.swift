@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-private var appURLString = "KeyboardTool://"
+private var appURLString = "XKeyboard://"
 private let groupName = "group.dev.tools"
 
 class KeyboardViewController: UIInputViewController {
@@ -87,7 +87,7 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
     
-
+    
     private func openMainApp() {
         self.extensionContext?.completeRequest(returningItems: nil, completionHandler: { _ in
             guard let url = URL(string: appURLString) else { return }
@@ -135,7 +135,7 @@ struct CustomerInputView : View {
                 HStack(){
                     MenuItem(tag: 1, text: "快捷文本", checkedTag: $selctedTab)
                     MenuItem(tag: 2, text: "剪切板", checkedTag: $selctedTab)
-                    MenuItem(tag: 3, text: "计算器", checkedTag: $selctedTab)
+//                    MenuItem(tag: 3, text: "计算器", checkedTag: $selctedTab)
                 }
                 .padding(3)
                 .background(RoundedRectangle(cornerRadius: 5).fill(Color.menuBgColor))
@@ -155,12 +155,11 @@ struct CustomerInputView : View {
                     QuickTextPage(onTextClick: self.onTextClick)
                         .environmentObject(quickModel)
                         .tag(1)
-                    QuickTextPage(onTextClick: self.onTextClick)
-                        .environmentObject(quickModel)
+                    ClipTextPage(onTextClick: self.onTextClick)
                         .tag(2)
-                    QuickTextPage(onTextClick: self.onTextClick)
-                        .environmentObject(quickModel)
-                        .tag(3)
+//                    QuickTextPage(onTextClick: self.onTextClick)
+//                        .environmentObject(quickModel)
+//                        .tag(3)
                 })
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .background(.clear)

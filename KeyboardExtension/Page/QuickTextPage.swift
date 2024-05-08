@@ -38,6 +38,7 @@ struct QuickTextPage: View {
                         }
                     }
                 }
+                .scrollIndicators(.hidden)
             }
             .frame(maxWidth: UIScreen.main.bounds.width * 0.25)
 
@@ -61,6 +62,7 @@ struct QuickTextPage: View {
                     }
                 }
             }
+            .scrollIndicators(.hidden)
         }
         .onAppear {
             self.selectedGroup = model.allGroup.first

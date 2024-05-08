@@ -9,12 +9,36 @@ import SwiftUI
 
 open class ClipBoardViewModel : ObservableObject {
     
+    static let shared : ClipBoardViewModel = ClipBoardViewModel()
+    
+    @AppStorage("lastPasteId") var lastChangedCount : Int = 0
+    
     let clipBoardCacheKey = "clipBoardCacheKey"
 
     @Published var clipInfos : [ClipboardInfo] = []
     
     init() {
-        self.clipInfos = clipInfos
+        self.clipInfos = loadClipBoards()
+    }
+    
+    func onAppEnterToForground(){
+        let changeCount = UIPasteboard.general.changeCount
+        let has = UIPasteboard.general.hasStrings
+        //复制的次数发生了变更而且有内容
+        if changeCount != self.lastChangedCount && has {
+            self.lastChangedCount = changeCount
+            if let text = UIPasteboard.general.string {
+                print("剪切板内容：\(text)")
+                addClipboardInfo(text)
+            } else {
+                print("剪切板中没有任何内容")
+            }
+        }
+    }
+    
+    func cleanAll(){
+        clipInfos.removeAll()
+        cacheClipBoard([])
     }
     
     //添加剪切板数据

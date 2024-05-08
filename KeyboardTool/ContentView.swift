@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+        
     var body: some View {
         VStack(spacing: 0) {
             TabView{
@@ -16,7 +16,7 @@ struct ContentView: View {
                     .tabItem({
                         NavigationItemView(title: "快捷文本", icon: "list.triangle")
                     })
-                CuttingBoardView()
+                ClipboardView()
                     .tabItem({
                         NavigationItemView(title: "剪切板", icon: "list.clipboard")
                     })
