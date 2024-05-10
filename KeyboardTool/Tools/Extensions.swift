@@ -75,9 +75,20 @@ extension Font {
     
     static let mainGroupFont : Font = .system(size: 14,weight: .bold)
 
-    static let subLabelFont : Font = .system(size: 13,weight: .light)
+    static let subLabelFont : Font = .system(size: 12,weight: .light)
     
     static let clipTextFont : Font = .system(size: 15 , weight: .bold)
+    
+    static let btnTextFont : Font = .system(size: 14,weight: .bold)
+    //提示文字样式
+    static let hintTextFont : Font = .system(size: 12 , weight: .light)
+}
+
+extension Text {
+    func hintText() -> some View{
+        font(.hintTextFont)
+            .foregroundStyle(.gray)
+    }
 }
 
 

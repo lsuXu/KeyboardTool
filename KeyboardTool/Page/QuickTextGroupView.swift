@@ -75,6 +75,7 @@ struct QuickTextGroupView: View {
                                 .tint(Color.blue)
                             }
                         }
+                        .onMove(perform: quickGroupModel.groupMove)
                     }
                     .listSectionSeparator(.hidden, edges: .top)
                     .listRowBackground(Color.white)

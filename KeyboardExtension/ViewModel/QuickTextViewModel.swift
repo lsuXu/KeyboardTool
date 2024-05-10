@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-open class QuickTextViewModel : ObservableObject {
-        
+open class QuickTextViewModel : NSObject , ObservableObject {
+    
     @Published var allGroup : [QuickTextGroup] = []
     
     @Published var allText : [QuickText] = []
@@ -18,15 +18,21 @@ open class QuickTextViewModel : ObservableObject {
     @Published var groupTextMap : [Int : [QuickText]] = [:]
     
     let groupCacheKey = "GroupCacheDataKey"
-
+    
     let quickTextCacheKey = "QuickTextCacheDataKey"
-
-    init() {
+    
+    override init() {
+        super.init()
         let groups = loadGroups()
         let texts = loadQuickText()
         self.allGroup = groups
         self.allText = texts
         self.groupTextMap = updateQuickGroupMap(allGroup: groups, allText: texts)
+        addListener()
+    }
+    
+    deinit {
+        removeListener()
     }
     
     func getGroup(_ groupId : Int) -> QuickTextGroup? {
@@ -44,9 +50,9 @@ open class QuickTextViewModel : ObservableObject {
         }
         return groups
     }
-
-   
-
+    
+    
+    
     // 检索 QuickTextGroup 数组
     func loadGroups() -> [QuickTextGroup] {
         if let encodedData = getShared()?.data(forKey: groupCacheKey) {
@@ -60,7 +66,7 @@ open class QuickTextViewModel : ObservableObject {
         }
         return []
     }
-
+    
     // 检索 QuickTextGroup 数组
     func loadQuickText() -> [QuickText] {
         if let encodedData = getShared()?.data(forKey: quickTextCacheKey) {
@@ -79,5 +85,29 @@ open class QuickTextViewModel : ObservableObject {
         UserDefaults(suiteName: Config.extensionGroup)
     }
     
-  
+    func addListener(){
+        if let userDefault = getShared() {
+            userDefault.addObserver(self, forKeyPath: quickTextCacheKey, context: nil)
+            userDefault.addObserver(self, forKeyPath: groupCacheKey, context: nil)
+        }
+    }
+    
+    func removeListener(){
+        if let userDefault = getShared() {
+            userDefault.removeObject(forKey: groupCacheKey)
+            userDefault.removeObject(forKey: quickTextCacheKey)
+        }
+    }
+    
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == quickTextCacheKey {
+            //快捷文本数据变化
+            self.allGroup = loadGroups()
+        } else if keyPath == groupCacheKey {
+            //分组数据变化
+            let texts = loadQuickText()
+            self.allText = texts
+            self.groupTextMap = updateQuickGroupMap(allGroup: self.allGroup, allText: texts)
+        }
+    }
 }

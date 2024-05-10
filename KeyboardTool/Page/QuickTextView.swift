@@ -56,6 +56,7 @@ struct QuickTextView: View {
                                 .tint(Color.blue)
                             }
                     }
+//                    .onMove(perform: textMove)
                 }
             }
         }
@@ -81,5 +82,10 @@ struct QuickTextView: View {
 
             }
         }
+    }
+    
+    //分组移动
+    func textMove(from source: IndexSet, to destination: Int) {
+        
     }
 }

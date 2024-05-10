@@ -12,4 +12,6 @@ struct Config {
     
     static let extensionGroup = "group.dev.tools"
     
+    //单机复制按钮开关
+    static let keySettingTouchClip = "keySettingTouchClip"
 }

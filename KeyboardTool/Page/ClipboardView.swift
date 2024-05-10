@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import AlertToast
+
 
 struct ClipboardView: View {
     
+    @AppStorage(Config.keySettingTouchClip) var keySettingTouchClip : Bool = true
+
     @StateObject var model = ClipBoardViewModel.shared
-    
-    let data : [Int] = [1,2,3,4,5,6,7]
-    
+        
     var body: some View {
         NavigationStack {
             List {
@@ -32,6 +34,12 @@ struct ClipboardView: View {
                             Spacer()
                         }
                     }
+                    .onTapGesture {
+                        if keySettingTouchClip {
+                            UIPasteboard.general.string = item.text
+                            model.showToast("已复制到剪切板")
+                        }
+                    }
                     .swipeActions(edge : .trailing , allowsFullSwipe: true) {
                         Button() {
                             model.deleteClipboardInfo(item)
@@ -41,10 +49,14 @@ struct ClipboardView: View {
                         .tint(Color.red)
                     }
                 }
+                .onMove(perform: model.clipInfoMove)
             }
             .listStyle(.sidebar)
             .background(.mainBg)
             .navigationTitle(Text("剪切板"))
+            .toast(isPresenting: $model.showToast,duration: 2, tapToDismiss: true,offsetY: 0, alert: {
+                AlertToast(displayMode: .alert, type: .regular,title: model.toastMsg)
+            })
         }
     }
 }

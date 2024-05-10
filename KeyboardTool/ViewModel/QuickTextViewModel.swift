@@ -45,6 +45,18 @@ open class QuickTextViewModel : ObservableObject {
         return groups
     }
     
+    //分组移动
+    func groupMove(from source: IndexSet, to destination: Int) {
+        allGroup.move(fromOffsets: source, toOffset: destination)
+        saveGroups(allGroup)
+    }
+    
+    //文本移动
+    func textMove(from source: IndexSet, to destination: Int) {
+        allText.move(fromOffsets: source, toOffset: destination)
+        saveQuickText(allText)
+    }
+    
     //添加快捷文本
     func createQuickText(text : String , groupId : Int){
         let quickText = QuickText(text: text, groupId: groupId)

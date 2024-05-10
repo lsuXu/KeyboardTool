@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-open class ClipBoardViewModel : ObservableObject {
+open class ClipBoardViewModel : NSObject , ObservableObject {
     
     static let shared : ClipBoardViewModel = ClipBoardViewModel()
         
@@ -15,15 +15,20 @@ open class ClipBoardViewModel : ObservableObject {
 
     @Published var clipInfos : [ClipboardInfo] = []
     
-    init() {
+    override init() {
+        super.init()
         self.clipInfos = loadClipBoards()
+        addListener()
+    }
+    
+    deinit {
+        removeListener()
     }
 
     //加载ClipboardInfo数据
     func loadClipBoards() -> [ClipboardInfo] {
         if let encodedData = getShared()?.data(forKey: clipBoardCacheKey) {
             do {
-                let str = String(data: encodedData, encoding: .utf8)
                 let clips = try JSONDecoder().decode([ClipboardInfo].self, from: encodedData)
                 return clips
             } catch {
@@ -35,5 +40,24 @@ open class ClipBoardViewModel : ObservableObject {
     
     func getShared() -> UserDefaults? {
         UserDefaults(suiteName: Config.extensionGroup)
+    }
+    
+    func addListener(){
+        if let userDefault = getShared() {
+            userDefault.addObserver(self, forKeyPath: clipBoardCacheKey, context: nil)
+        }
+    }
+    
+    func removeListener(){
+        if let userDefault = getShared() {
+            userDefault.removeObject(forKey: clipBoardCacheKey)
+        }
+    }
+    
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == clipBoardCacheKey {
+            //快捷文本数据变化
+            self.clipInfos = loadClipBoards()
+        }
     }
 }

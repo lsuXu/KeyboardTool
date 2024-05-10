@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e332e69-c6d3-4453-ab8e-89d6799c6798" name="Changes" comment="键盘扩展显示快捷文本内容，增加文本输入，清空，删除，空格以及回车输入等" />
+    <list default="true" id="3e332e69-c6d3-4453-ab8e-89d6799c6798" name="Changes" comment="增加剪切板数据读取显示，键盘输入显示剪切板内容等，基础版本功能完成">
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch_128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch_16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch_256 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch_256.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch_32 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch_32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch_512 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch_512.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/ic_launch_64.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyboardTool/ViewModel/BaseModel.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardExtension/ViewModel/ClipBoardViewModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardExtension/ViewModel/ClipBoardViewModel.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardExtension/ViewModel/QuickTextViewModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardExtension/ViewModel/QuickTextViewModel.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/AppSceneDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/AppSceneDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/Config.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/Config.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/Page/AllQuickTextView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/Page/AllQuickTextView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/Page/ClipboardView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/Page/ClipboardView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/Page/QuickTextGroupView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/Page/QuickTextGroupView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/Page/QuickTextView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/Page/QuickTextView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/Page/SettingView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/Page/SettingView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/Tools/Extensions.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/Tools/Extensions.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/ViewModel/ClipBoardViewModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/ViewModel/ClipBoardViewModel.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardTool/ViewModel/QuickTextViewModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardTool/ViewModel/QuickTextViewModel.swift" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715139241272</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="增加剪切板数据读取显示，键盘输入显示剪切板内容等，基础版本功能完成">
+      <option name="closed" value="true" />
+      <created>1715163763767</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715163763767</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,6 +154,7 @@
     <MESSAGE value="快捷文本分组创建，编辑，添加快捷文本以及预览查看等功能" />
     <MESSAGE value="修复快捷文本已知问题" />
     <MESSAGE value="键盘扩展显示快捷文本内容，增加文本输入，清空，删除，空格以及回车输入等" />
-    <option name="LAST_COMMIT_MESSAGE" value="键盘扩展显示快捷文本内容，增加文本输入，清空，删除，空格以及回车输入等" />
+    <MESSAGE value="增加剪切板数据读取显示，键盘输入显示剪切板内容等，基础版本功能完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加剪切板数据读取显示，键盘输入显示剪切板内容等，基础版本功能完成" />
   </component>
 </project>

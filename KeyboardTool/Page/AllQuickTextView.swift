@@ -30,11 +30,13 @@ struct AllQuickTextView: View {
                             let group = model.getGroup(quickText.groupId)
                             VStack(alignment : .leading) {
                                 Text(quickText.text)
-                                    .font(.system(size: 13,weight: .bold))
+                                    .font(.mainTextFont)
+                                    .foregroundStyle(.black)
                                 HStack(spacing : 15){
                                     Spacer()
                                     Text(group?.label ?? "")
                                         .font(.subLabelFont)
+                                        .foregroundStyle(.gray)
                                     Circle()
                                         .fill(group?.getColor() ?? .red)
                                         .frame(width: 8 , height: 8)
@@ -60,6 +62,7 @@ struct AllQuickTextView: View {
                         }
 
                     }
+                    .onMove(perform: model.textMove)
                 }
             }
         }

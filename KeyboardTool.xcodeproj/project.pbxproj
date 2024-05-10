@@ -37,6 +37,8 @@
 		2A32B2852BEB72B500081DF6 /* ClipBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2842BEB72B500081DF6 /* ClipBoardViewModel.swift */; };
 		2A32B2872BEB72CF00081DF6 /* ClipboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2862BEB72CF00081DF6 /* ClipboardInfo.swift */; };
 		2A32B2892BEB734000081DF6 /* ClipTextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B2882BEB734000081DF6 /* ClipTextPage.swift */; };
+		2A32B28D2BECB42000081DF6 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 2A32B28C2BECB42000081DF6 /* AlertToast */; };
+		2A32B28F2BECB49E00081DF6 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A32B28E2BECB49E00081DF6 /* BaseModel.swift */; };
 		2A975E342BD9074D0043BD43 /* KeyboardToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */; };
 		2A975E362BD9074D0043BD43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A975E352BD9074D0043BD43 /* ContentView.swift */; };
 		2A975E382BD907500043BD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A975E372BD907500043BD43 /* Assets.xcassets */; };
@@ -104,6 +106,7 @@
 		2A32B2862BEB72CF00081DF6 /* ClipboardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardInfo.swift; sourceTree = "<group>"; };
 		2A32B2882BEB734000081DF6 /* ClipTextPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipTextPage.swift; sourceTree = "<group>"; };
 		2A32B28A2BEB771300081DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2A32B28E2BECB49E00081DF6 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		2A975E302BD9074D0043BD43 /* KeyboardTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A975E332BD9074D0043BD43 /* KeyboardToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolApp.swift; sourceTree = "<group>"; };
 		2A975E352BD9074D0043BD43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A32B28D2BECB42000081DF6 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +190,7 @@
 			children = (
 				2A06A5042BDF6DF0008C8EDF /* QuickTextViewModel.swift */,
 				2ADB80FC2BE11B0B00AA8C9B /* ClipBoardViewModel.swift */,
+				2A32B28E2BECB49E00081DF6 /* BaseModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -309,6 +314,9 @@
 				2A975E4C2BD908FB0043BD43 /* PBXTargetDependency */,
 			);
 			name = KeyboardTool;
+			packageProductDependencies = (
+				2A32B28C2BECB42000081DF6 /* AlertToast */,
+			);
 			productName = KeyboardTool;
 			productReference = 2A975E302BD9074D0043BD43 /* KeyboardTool.app */;
 			productType = "com.apple.product-type.application";
@@ -357,6 +365,9 @@
 				Base,
 			);
 			mainGroup = 2A975E272BD9074D0043BD43;
+			packageReferences = (
+				2A32B28B2BECB42000081DF6 /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = 2A975E312BD9074D0043BD43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -409,6 +420,7 @@
 				2A06A5052BDF6DF0008C8EDF /* QuickTextViewModel.swift in Sources */,
 				2ADB80FD2BE11B0B00AA8C9B /* ClipBoardViewModel.swift in Sources */,
 				2A06A50E2BDFAA47008C8EDF /* QuickTextView.swift in Sources */,
+				2A32B28F2BECB49E00081DF6 /* BaseModel.swift in Sources */,
 				2A06A5172BE0CAC7008C8EDF /* EditQuickGroupView.swift in Sources */,
 				2A06A5192BE0CB24008C8EDF /* DefaultColorCheckView.swift in Sources */,
 				2A06A4F12BDE3556008C8EDF /* Extensions.swift in Sources */,
@@ -738,6 +750,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A32B28B2BECB42000081DF6 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A32B28C2BECB42000081DF6 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A32B28B2BECB42000081DF6 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A975E282BD9074D0043BD43 /* Project object */;
 }

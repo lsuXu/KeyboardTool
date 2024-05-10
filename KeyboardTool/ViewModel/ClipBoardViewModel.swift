@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-open class ClipBoardViewModel : ObservableObject {
+open class ClipBoardViewModel : BaseModel {
     
     static let shared : ClipBoardViewModel = ClipBoardViewModel()
     
@@ -17,7 +17,8 @@ open class ClipBoardViewModel : ObservableObject {
 
     @Published var clipInfos : [ClipboardInfo] = []
     
-    init() {
+    override init() {
+        super.init()
         self.clipInfos = loadClipBoards()
     }
     
@@ -34,6 +35,12 @@ open class ClipBoardViewModel : ObservableObject {
                 print("剪切板中没有任何内容")
             }
         }
+    }
+    
+    //分组移动
+    func clipInfoMove(from source: IndexSet, to destination: Int) {
+        clipInfos.move(fromOffsets: source, toOffset: destination)
+        cacheClipBoard(clipInfos)
     }
     
     func cleanAll(){
